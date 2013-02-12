@@ -42,4 +42,11 @@ StandardError: input must be a number
 
 >> gc.to_base10("ZZ")
 => 1155
+
+>> gc.to_base10("0000000000ZZ")
+=> 1155
+
+# you can represent 10^24 - one septillion - with just 16 base34 digits, aka, a string of length 16
+>> gc.to_base34(10 ** 24)
+=> "ANGMLFL5UA0AW72G"
 ```
