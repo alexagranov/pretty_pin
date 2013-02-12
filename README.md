@@ -25,6 +25,18 @@ StandardError: input must be a number
         from ./lib/base34.rb:37:in 'to_base34'
         from (irb):6
 
+>> gc.to_base34(33)
+=> "Z"
+
+>> gc.to_base10("Z")
+=> 33
+
+>> gc.to_base34(34)
+=> "10"
+
+>> gc.to_base10("10")
+=> 34
+
 >> gc.to_base34(1155)
 => "ZZ"
 
