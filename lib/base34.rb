@@ -18,6 +18,8 @@ module Base34
   A static method to turn a base34 string representation into a base10 bignum.
 =end
   def to_base10(base34_str)
+    raise StandardError.new("input must be a String") unless base34_str.is_a?(String)
+
     total = 0
     size = base34_str.length
     for i in 0..size-1
@@ -32,6 +34,8 @@ module Base34
   The basic methodology is to decompose work into multiples of 34 - we basically end up creating the base34 number by taking base34 chunks away from the base10 number.
 =end
   def to_base34(base10_num)
+    raise StandardError.new("input must be a number") unless base10_num.respond_to?(:abs)
+
     # our storage array...
     base34_arr = Array.new
 
