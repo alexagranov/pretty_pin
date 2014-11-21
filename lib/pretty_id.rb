@@ -1,5 +1,5 @@
 #
-# PrettyPin is a utility module meant for mixin to add methods for managing the conversion from base10
+# PrettyId is a utility module meant for mixin to add methods for managing the conversion from base10
 # to base34 numbers.  The base34 number must be represented as a string.  Useful applications
 # include, but are not limited to:
 #
@@ -9,7 +9,7 @@
 # We use base 34 as this assumes usage of the 10 numeric digits as well as the capitalized alphabet
 # without I and O to avoid any confusion with 1 and 0, respectively.
 #
-module PrettyPin
+module PrettyId
 
   BASE34_DIGITS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G',
                    'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']

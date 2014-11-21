@@ -1,8 +1,8 @@
-pretty_pin
+pretty_id
 ======
-pretty_pin is a simple Ruby module for mixing in methods to convert between base10 and base34 numbers.
+pretty_id is a simple Ruby module for mixing in methods to convert between base10 and base34 numbers.
 
-Applications of pretty_pin could include, but are not limited to:
+Applications of pretty_id could include, but are not limited to:
 - gift/promotion/discount/redemption code generation
 - much shorter string representation of long decimal strings, such as a UUID
 
@@ -13,7 +13,7 @@ Example Usage:
 
 ```ruby
 >> class GiftCode
->> include PrettyPin
+>> include PrettyId
 >> end
 => GiftCode
 
