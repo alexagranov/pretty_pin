@@ -2,51 +2,45 @@ pretty_id
 ======
 pretty_id is a simple Ruby module for mixing in methods to convert between base10 and base34 numbers.
 
+Base34 is represented with the following characters: [0-9] and [A-Z, minus I & O to avoid any readability issues]
+
 Applications of pretty_id could include, but are not limited to:
 - gift/promotion/discount/redemption code generation
 - much shorter string representation of long decimal strings, such as a UUID
-
-Specs and Gemification coming soon...
 
 Example Usage:
 ==============
 
 ```ruby
->> class GiftCode
->> include PrettyId
+>> class GiftCode < Integer
 >> end
 => GiftCode
 
->> gc = GiftCode.new
-=> #<GiftCode:0x100611510>
-
->> gc.to_base34("393r43")
-StandardError: input must be a number
-        from ./lib/base34.rb:37:in 'to_base34'
-        from (irb):6
-
->> gc.to_base34(33)
-=> "Z"
-
->> gc.to_base10("Z")
+>> gc = 33
 => 33
 
->> gc.to_base34(34)
+>> gc.to_base34
+=> "Z"
+
+>> "Z".to_base10
+=> 33
+
+>> 34.to_base34
 => "10"
 
->> gc.to_base10("10")
+>> "10".to_base10
 => 34
 
->> gc.to_base34(1155)
+>> 1155.to_base34
 => "ZZ"
 
->> gc.to_base10("ZZ")
+>> "ZZ".to_base10
 => 1155
 
->> gc.to_base10("0000000000ZZ")
+>> "0000000000ZZ".to_base10
 => 1155
 
 # you can represent 10^24 - one septillion - with just 16 base34 digits, aka, a string of length 16
->> gc.to_base34(10 ** 24)
+>> (10 ** 24).to_base34
 => "ANGMLFL5UA0AW72G"
 ```
