@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe PrettyId do
-  subject { PrettyId.new }
+describe UserFriendlyId do
+  subject { UserFriendlyId.new }
 
   describe '#to_base34' do
     context 'method existence' do

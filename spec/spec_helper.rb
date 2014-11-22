@@ -1,1 +1,1 @@
-require 'pretty_id'
+require 'user_friendly_id'
