@@ -22,6 +22,12 @@ describe UserFriendlyId do
         expect((34 ** 5).to_base34).to eq "100000"
         expect((34 ** 10).to_base34).to eq "10000000000"
       end
+
+      it 'handles negative integer as expected' do
+        expect((-34 ** 1).to_base34).to eq "-10"
+        expect((-34 ** 5).to_base34).to eq "-100000"
+        expect((-34 ** 10).to_base34).to eq "-10000000000"
+      end
     end
   end
 
