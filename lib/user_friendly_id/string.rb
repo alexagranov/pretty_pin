@@ -7,7 +7,7 @@ class String
     total = 0
     size = self.length
     for i in 0..size-1
-      total += BASE34_DIGITS.index(self[i,1]) * 34**(size-(i+1))
+      total += UserFriendlyId::BASE34_DIGITS.index(self[i,1]) * 34**(size-(i+1))
     end
     return total
   end
