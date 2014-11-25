@@ -1,8 +1,14 @@
 user_friendly_id
 ======
-user_friendly_id adds methods to Integer and String to convert between base10 and base34 representations of a number.  A base34 number is shorter than decimal, case insensitive when compared with base64, and avoids the confusion associated with 1/I and 0/O.
+Add methods to Integer and String to convert between base10 and base34 representations of a number.  
 
-base34 is represented with the following characters: [0-9] and [A-Z, minus I & O to avoid any readability issues]
+Base34 rocks!!!
+- shorter than decimal
+- shorter than hexadecimal 
+- case insensitive when compared with base64
+- avoids user input confusion associated with 1/I and 0/O
+
+Base34 is represented with the following characters: [0-9] and [A-Z, minus I & O to avoid any readability issues]
 
 Applications of user_friendly_id could include, but are not limited to:
 - gift/promotion/discount/redemption code generation
@@ -12,18 +18,8 @@ Example Usage:
 ==============
 
 ```ruby
->> class GiftCode < Integer
->> end
-=> GiftCode
-
->> gc = 33
-=> 33
-
->> gc.to_base34
+>> 33.to_base34
 => "Z"
-
->> "Z".to_base10
-=> 33
 
 >> 34.to_base34
 => "10"
@@ -34,13 +30,25 @@ Example Usage:
 >> 1155.to_base34
 => "ZZ"
 
->> "ZZ".to_base10
+>> "ZZ".from_base34
 => 1155
 
->> "0000000000ZZ".to_base10
+>> "0000000000ZZ".from_base34
+=> 1155
+
+>> "   00ZZ  ".from_base34
 => 1155
 
 # you can represent 10^24 - one septillion - with just 16 base34 digits, aka, a string of length 16
 >> (10 ** 24).to_base34
 => "ANGMLFL5UA0AW72G"
+
+# typical MongoDB ObjectId
+>> "507f191e810c19729de860ea".hex.to_base34
+=> "6RRUV0LLDJG0N6MAYBL" 
+
+# typical UUID
+>> "6948DF80-14BD-4E04-8842-7668D9C001F5".gsub(/-/,'').hex.to_base34
+=> "QKH6RDPUM5ACPE8GWKWB2PSMB" 
+
 ```
