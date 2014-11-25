@@ -5,7 +5,8 @@ class String
 =end
   def from_base34
     raise ArgumentError.new("Invalid characters for a base34 number found") unless self.valid_base34?
-    kleen = self.kleened
+    # strip whitespace, negative sign, and upcase
+    kleen = self.kleened.upcase
     total = 0
     size = kleen.length
     for i in 0..size-1
