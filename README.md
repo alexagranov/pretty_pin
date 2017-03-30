@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/alexagranov/user_friendly_id.svg?branch=master)](https://travis-ci.org/alexagranov/user_friendly_id)
+[![Gem Version](https://badge.fury.io/rb/user_friendly_id.svg)](https://badge.fury.io/rb/user_friendly_id)
+
 user_friendly_id
 ======
 Add methods to Integer and String to convert between base10 and base34 representations of a number.  
